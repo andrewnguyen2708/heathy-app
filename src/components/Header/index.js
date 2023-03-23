@@ -1,44 +1,31 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
-import { ReactComponent as NaviIcon } from "../../assets/icons/navi_icon.svg";
-import { ReactComponent as ChallengeIcon } from "../../assets/icons/challenge_icon.svg";
-import { ReactComponent as InfoIcon } from "../../assets/icons/info_icon.svg";
+import { ReactComponent as MenuIcon } from "../../assets/icons/menu_icon.svg";
+import { routes } from "../../containers/routes";
 
 export default function Header() {
-  const menus = [
-    {
-      id: "m1",
-      label: "自分の記録",
-      icon: <NaviIcon />,
-    },
-    {
-      id: "m2",
-      label: "チャレンジ",
-      icon: <ChallengeIcon />,
-    },
-    {
-      id: "m3",
-      label: "お知らせ",
-      icon: <InfoIcon />,
-    },
-  ];
-
   return (
-    <div className="bg-dark500">
-      <div className="container mx-auto flex flex-row justify-between">
-        <div className="h-10 my-auto">
+    <div className="h-16 bg-dark500 flex items-center z-20">
+      <div className="container mx-auto flex flex-row justify-between items-center">
+        <div className="h-12">
           <img alt="logo" src={logo} className="w-full h-full object-cover" />
         </div>
         <div className="min-w-min">
-          <ul className="grid gap-4 grid-cols-3">
-            {menus.map((item) => (
+          <ul className="grid gap-8 grid-cols-4">
+            {routes.map((item) => (
               <li key={item.id}>
-                <div className="flex flex-row align-middle">
+                <a
+                  href={item.path}
+                  className="flex flex-row items-center gap-2"
+                >
                   {item.icon}
-                  <p className="text-white">{item.label}</p>
-                </div>
+                  <span className="text-white">{item.label}</span>
+                </a>
               </li>
             ))}
+            <li>
+              <MenuIcon />
+            </li>
           </ul>
         </div>
       </div>
