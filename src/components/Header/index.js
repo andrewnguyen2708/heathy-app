@@ -24,18 +24,18 @@ export default function Header() {
   ];
 
   return (
-    <div className="container mx-auto ">
-      <div className="flex flex-row justify-between">
-        <div className="h-auto w-10">
-          <img alt="logo" src={logo} className="inset-0" />
+    <div className="bg-dark500">
+      <div className="container mx-auto flex flex-row justify-between">
+        <div className="h-10 my-auto">
+          <img alt="logo" src={logo} className="w-full h-full object-cover" />
         </div>
-        <div className="min-w-max">
-          <ul className="flex flex-row">
+        <div className="min-w-min">
+          <ul className="grid gap-4 grid-cols-3">
             {menus.map((item) => (
               <li key={item.id}>
-                <div>
+                <div className="flex flex-row align-middle">
                   {item.icon}
-                  <p>{item.label}</p>
+                  <p className="text-white">{item.label}</p>
                 </div>
               </li>
             ))}
