@@ -1,34 +1,46 @@
 import React from "react";
-import Logo from "../../assets/images/logo.png";
-import { ReactComponent as NaviIcon } from "../../assets/icons/navi_memo.svg";
+import logo from "../../assets/images/logo.png";
+import { ReactComponent as NaviIcon } from "../../assets/icons/navi_icon.svg";
+import { ReactComponent as ChallengeIcon } from "../../assets/icons/challenge_icon.svg";
+import { ReactComponent as InfoIcon } from "../../assets/icons/info_icon.svg";
 
 export default function Header() {
+  const menus = [
+    {
+      id: "m1",
+      label: "自分の記録",
+      icon: <NaviIcon />,
+    },
+    {
+      id: "m2",
+      label: "チャレンジ",
+      icon: <ChallengeIcon />,
+    },
+    {
+      id: "m3",
+      label: "お知らせ",
+      icon: <InfoIcon />,
+    },
+  ];
+
   return (
-    <div>
-      <div>
-        <img alt="logo" src={Logo} />
-      </div>
-      <div>
-        <ul>
-          <li>
-            <div>
-              <NaviIcon />
-              <p>自分の記録</p>
-            </div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-        </ul>
+    <div className="container mx-auto ">
+      <div className="flex flex-row justify-between">
+        <div className="h-auto w-10">
+          <img alt="logo" src={logo} className="inset-0" />
+        </div>
+        <div className="min-w-max">
+          <ul className="flex flex-row">
+            {menus.map((item) => (
+              <li key={item.id}>
+                <div>
+                  {item.icon}
+                  <p>{item.label}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

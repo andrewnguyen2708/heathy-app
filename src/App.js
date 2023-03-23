@@ -1,15 +1,11 @@
-import './App.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Header from './components/Header/index';
-
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./components/Header/index";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <div>Hello </div>,
   },
 ]);
 
