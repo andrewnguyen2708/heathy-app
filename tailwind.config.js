@@ -17,7 +17,6 @@ module.exports = {
         dark600: "#2e2e2e",
         dark500: "#414141",
         dark400: "#777777",
-        primary300400: "linear-gradient(180deg, #ffcc21 0%, #ff963c 100%)",
       },
       backgroundImage: {
         'hero-left': `url('/assets/images/hero_left.jpg'})`,

@@ -1,13 +1,14 @@
 import React from "react";
-import heroImage from "../../../assets/images/hero_left.jpg";
+import Gallery from "./Gallery";
+import Hero from "./Hero";
+import Menu from "./Menu";
 
 export default function MyReocord() {
   return (
-    <div className="hero h-[316px]">
-      <div before="" className="h-full flex items-center">
-        <img alt="hero"  src={heroImage} className="h-auto w-[540px] object-cover z-[-10]" />
-      </div>
-      <div></div>
+    <div>
+      <Hero />
+      <Menu />
+      <Gallery />
     </div>
   );
 }
